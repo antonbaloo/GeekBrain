@@ -7,24 +7,26 @@
 # то вначале нужно добавить сумму этих чисел к полученной ранее сумме и после этого завершить программу.
 
 
-var_sum = 0
-while True:
-    var_num=[]
-    var = input('numbers pls: ').split(' ')
-    for i in var:
-        if i == 'q':
-            end = var.index('q')
-        var_num = list(map(int, var[0:end-1]))
-        var_sum += sum(var_num)
-        break
-    # var_num = list(map(int, var))
-    # var_sum += sum(var_num)
-    print(var_sum)
+def my_funk():
+    var_sum = 0
+    while True:
+        try:
+            var_num = []
+            var = input('numbers pls: ').split(' ')
+            if var.count('q'):
+                var.remove('q')
+                var_num = list(map(int, var))
+                var_sum += sum(var_num)
+                print(var_sum)
+                print('Программа завершилась')
+                break
+            else:
+                var_num = list(map(int, var))
+                var_sum += sum(var_num)
+        except ValueError:
+            print('В конце лишний пробел или иной символ. Повтори попытку')
+            continue
+        print(var_sum)
 
 
-
-
-
-
-# def my_funk():
-# my_list
+my_funk()
