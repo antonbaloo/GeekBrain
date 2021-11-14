@@ -60,6 +60,7 @@ class Cell:
         # print('\\n'.join(order))
 
 cell_1 = Cell(10)
+
 cell_2 = Cell(3)
 
 cell_1 * cell_2
